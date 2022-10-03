@@ -29,7 +29,6 @@ function initCountdown(deadline) {
 	const minutesEl = document.getElementById('minutes');
 	const secondsEl = document.getElementById('seconds');
 
-
 	// Atualizar cronômetro
 
 	function updateCountdown() {
