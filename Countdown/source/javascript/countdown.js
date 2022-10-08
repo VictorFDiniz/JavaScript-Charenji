@@ -1,4 +1,4 @@
-// Calcular tempo
+// Calcula tempo
 
 function getTime(deadline) {
 
@@ -20,7 +20,7 @@ function getTime(deadline) {
 	
 }
 
-// Iniciar cronômetro
+// Inicia cronômetro
 
 function initCountdown(deadline) {
 
@@ -29,7 +29,7 @@ function initCountdown(deadline) {
 	const minutesEl = document.getElementById('minutes');
 	const secondsEl = document.getElementById('seconds');
 
-	// Atualizar cronômetro
+	// Atualiza cronômetro
 
 	function updateCountdown() {
 
@@ -66,7 +66,7 @@ function initCountdown(deadline) {
 	let timeInterval = setInterval(updateCountdown, 1000);
 }
 
-// Passando data inicial
+// Passa data inicial
 
 const halloweenDate = new Date('31 Oct 2022');
 initCountdown(halloweenDate)
