@@ -51,12 +51,12 @@ function initCountdown(deadline) {
 
 		if (year != isLeapYear && untilH.total == 0) {
 			const deadline = new Date(deadline.getTime() + 365 * 24 * 60 * 60 * 1000)
-			initCountdown(halloweenDate)
+			initCountdown(deadline)
 			}
 
 		else if (year == isLeapYear && untilH.total == 0) {
 			const deadline = new Date(deadline.getTime() + 366 * 24 * 60 * 60 * 1000)
-			initCountdown(halloweenDate)
+			initCountdown(deadline)
 
 		}
 
