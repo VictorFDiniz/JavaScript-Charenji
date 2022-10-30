@@ -50,12 +50,12 @@ function initCountdown(deadline) {
 		const isLeapYear = !((year % 4) && (year % 100) || !(year % 400))
 
 		if (year != isLeapYear && untilH.total == 0) {
-			halloweenDate = new Date(deadline.getTime() + 365 * 24 * 60 * 60 * 1000)
+			const halloweenDate = new Date(deadline.getTime() + 365 * 24 * 60 * 60 * 1000)
 			initCountdown(halloweenDate)
 			}
 
 		else if (year == isLeapYear && untilH.total == 0) {
-			halloweenDate = new Date(deadline.getTime() + 366 * 24 * 60 * 60 * 1000)
+			const halloweenDate = new Date(deadline.getTime() + 366 * 24 * 60 * 60 * 1000)
 			initCountdown(halloweenDate)
 
 		}
