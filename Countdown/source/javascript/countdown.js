@@ -2,47 +2,85 @@
 const year = new Date().getFullYear()
 
 let timeInterval
+let countdownWasStarted = false
 let deadline = new Date("Oct 31, " + year)
 
 // Função que inicia o contador
 function initCountdown() {
 
 	// Recebe o total de milissegundos como retorno de updateTime
-	const untilH = updateTime();
+	const untilH = (deadline - new Date())
 
 	// Verfica se o ano é bissexto e se a data inicial expirou
 	const isLeapYear = !((year % 4) && (year % 100) || !(year % 400))
-	if (year != isLeapYear && untilH.total <= 0) {
+	 
+	if (year != isLeapYear && untilH <= 0) {
 		deadline = new Date(deadline.getTime() + 365 * 24 * 60 * 60 * 1000)
+		countdownWasStarted = true
 		updateTime()
-		}
+	}
 
 	else if (year == isLeapYear && untilH.total <= 0) {
 		deadline = new Date(deadline.getTime() + 366 * 24 * 60 * 60 * 1000)
+		countdownWasStarted = true
 		updateTime()
 	}
 	// Executa a função updateTime a cada 1 segundo
 	timeInterval = setInterval(updateTime, 1000)
 }
 
-// Função que calcula os dias, horas, minutos e segundos até o halloween
+function singular(value, singular, plural) {
+
+	if(value == 1) {
+		return singular
+	} else {
+		plural = singular + "s"
+		return plural
+	}
+}
+
+function resetCountdown() {
+	
+	clearInterval(timeInterval)
+	initCountdown()
+}
+
+// Função que manipula o DOM e calcula os dias, horas, minutos e segundos até o halloween
 function updateTime() {
 
-	const untilHalloween = (deadline - new Date());
+		const untilHalloween = (deadline - new Date())
+		const deadlineYear = deadline.getFullYear()
 
-	const days = Math.floor(untilHalloween / (24*60*60*1000));
-  	const hours = Math.floor(untilHalloween / (60*60*1000)) % 24;
-  	const minutes = Math.floor(untilHalloween / (60*1000)) % 60;
-  	const seconds = Math.floor(untilHalloween / 1000) % 60;
+		if(countdownWasStarted == false && deadlineYear == year && untilHalloween <= 0) {
+			resetCountdown()
+		}
 
-	  document.getElementById('days').innerHTML = days
-	  document.getElementById('hours').innerHTML = hours
-	  document.getElementById('minutes').innerHTML = minutes
-	  document.getElementById('seconds').innerHTML = seconds
+		else if(deadlineYear != year && countdownWasStarted != false) {
+			countdownWasStarted = !countdownWasStarted
+		}
 
-	  return {
-		'total': untilHalloween
-	  }
+		// Calculando dias, horas, minutos e segundos
+		const days = Math.floor(untilHalloween / (24*60*60*1000))
+		const hours = Math.floor(untilHalloween / (60*60*1000)) % 24
+		const minutes = Math.floor(untilHalloween / (60*1000)) % 60
+		const seconds = Math.floor(untilHalloween / 1000) % 60
+	
+		let displayDays = `${singular(days, "day")}`
+		let displayHours = `${singular(hours, "hour")}`
+		let displayMinu = `${singular(minutes, "minute")}`
+		let displaySecs = `${singular(seconds, "second")}`
+
+	
+		  document.getElementById('singularD').innerHTML = displayDays
+		  document.getElementById('singularH').innerHTML = displayHours
+		  document.getElementById('singularM').innerHTML = displayMinu
+		  document.getElementById('singularS').innerHTML = displaySecs
+	
+	
+		  document.getElementById('days').innerHTML = days
+		  document.getElementById('hours').innerHTML = hours
+		  document.getElementById('minutes').innerHTML = minutes
+		  document.getElementById('seconds').innerHTML = seconds
 }
 
 // Chamada inicial
