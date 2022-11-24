@@ -1,4 +1,4 @@
-// configurando data inicial do contador
+// Definindo data inicial do contador
 const year = new Date().getFullYear()
 
 let timeInterval
@@ -8,7 +8,7 @@ let deadline = new Date("Oct 31, " + year)
 // Função que inicia o contador
 function initCountdown() {
 
-	// Recebe o total de milissegundos como retorno de updateTime
+	// Armazena o tempo total em milissegundos até o halloween
 	const untilH = (deadline - new Date())
 
 	// Verfica se o ano é bissexto e se a data inicial expirou
@@ -29,6 +29,7 @@ function initCountdown() {
 	timeInterval = setInterval(updateTime, 1000)
 }
 
+// Converte os dias, horas, minutos e segundos para o singular quando devem estar no singular
 function singular(value, singular, plural) {
 
 	if(value == 1) {
@@ -39,6 +40,7 @@ function singular(value, singular, plural) {
 	}
 }
 
+// Reinicia o contador
 function resetCountdown() {
 	
 	clearInterval(timeInterval)
@@ -48,13 +50,17 @@ function resetCountdown() {
 // Função que manipula o DOM e calcula os dias, horas, minutos e segundos até o halloween
 function updateTime() {
 
+		// Armazena o tempo total em milissegundos até o halloween
 		const untilHalloween = (deadline - new Date())
+
+		// Armazena o ano atual da variavel deadline
 		const deadlineYear = deadline.getFullYear()
 
+		// Caso o contador tenha expirado, chama a função resetCountdown para reinicia-lo
 		if(countdownWasStarted == false && deadlineYear == year && untilHalloween <= 0) {
 			resetCountdown()
 		}
-
+		// Se o contador já reiniciou, redefine a variavel countdownWasStarted para false
 		else if(deadlineYear != year && countdownWasStarted != false) {
 			countdownWasStarted = !countdownWasStarted
 		}
