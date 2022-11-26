@@ -1,93 +1,91 @@
 // Definindo data inicial do contador
-const year = new Date().getFullYear()
+const year = new Date().getFullYear();
 
-let timeInterval
-let countdownWasStarted = false
-let deadline = new Date("Oct 31, " + year)
+let timeInterval;
+let countdownWasStarted = false;
+let deadline = new Date(year, 9, 31);
 
 // Função que inicia o contador
 function initCountdown() {
 
 	// Armazena o tempo total em milissegundos até o halloween
-	const untilH = (deadline - new Date())
+	const untilH = (deadline - new Date());
 
 	// Verfica se o ano é bissexto e se a data inicial expirou
-	const isLeapYear = !((year % 4) && (year % 100) || !(year % 400))
-	 
-	if (year != isLeapYear && untilH <= 0) {
-		deadline = new Date(deadline.getTime() + 365 * 24 * 60 * 60 * 1000)
-		countdownWasStarted = true
-		updateTime()
+	const isLeapYear = !((year % 4) && (year % 100) || !(year % 400));
+
+	if (isLeapYear === false && untilH <= 0) {
+		deadline = new Date(deadline.getTime() + 365 * 24 * 60 * 60 * 1000);
+		countdownWasStarted = true;
+		updateTime();
 	}
 
-	else if (year == isLeapYear && untilH.total <= 0) {
-		deadline = new Date(deadline.getTime() + 366 * 24 * 60 * 60 * 1000)
-		countdownWasStarted = true
-		updateTime()
+	else if (isLeapYear === true && untilH <= 0) {
+		deadline = new Date(deadline.getTime() + 366 * 24 * 60 * 60 * 1000);
+		countdownWasStarted = true;
+		updateTime();
 	}
 	// Executa a função updateTime a cada 1 segundo
-	timeInterval = setInterval(updateTime, 1000)
+	timeInterval = setInterval(updateTime, 1000);
 }
 
 // Converte os dias, horas, minutos e segundos para o singular quando devem estar no singular
-function singular(value, singular, plural) {
+function singular(value, singular) {
 
 	if(value == 1) {
-		return singular
+		return singular;
 	} else {
-		plural = singular + "s"
-		return plural
+		return singular + "s";
 	}
 }
 
 // Reinicia o contador
 function resetCountdown() {
 	
-	clearInterval(timeInterval)
-	initCountdown()
+	clearInterval(timeInterval);
+	initCountdown();
 }
 
 // Função que manipula o DOM e calcula os dias, horas, minutos e segundos até o halloween
 function updateTime() {
 
 		// Armazena o tempo total em milissegundos até o halloween
-		const untilHalloween = (deadline - new Date())
+		const untilHalloween = (deadline - new Date());
 
 		// Armazena o ano atual da variavel deadline
-		const deadlineYear = deadline.getFullYear()
+		const deadlineYear = deadline.getFullYear();
 
 		// Caso o contador tenha expirado, chama a função resetCountdown para reinicia-lo
-		if(countdownWasStarted == false && deadlineYear == year && untilHalloween <= 0) {
-			resetCountdown()
+		if(countdownWasStarted === false && deadlineYear === year && untilHalloween <= 0) {
+			resetCountdown();
 		}
 		// Se o contador já reiniciou, redefine a variavel countdownWasStarted para false
-		else if(deadlineYear != year && countdownWasStarted != false) {
-			countdownWasStarted = !countdownWasStarted
+		else if(deadlineYear !== year && countdownWasStarted === true) {
+			countdownWasStarted = !countdownWasStarted;
 		}
 
 		// Calculando dias, horas, minutos e segundos
-		const days = Math.floor(untilHalloween / (24*60*60*1000))
-		const hours = Math.floor(untilHalloween / (60*60*1000)) % 24
-		const minutes = Math.floor(untilHalloween / (60*1000)) % 60
-		const seconds = Math.floor(untilHalloween / 1000) % 60
+		const days = Math.floor(untilHalloween / (24*60*60*1000));
+		const hours = Math.floor(untilHalloween / (60*60*1000)) % 24;
+		const minutes = Math.floor(untilHalloween / (60*1000)) % 60;
+		const seconds = Math.floor(untilHalloween / 1000) % 60;
 	
-		let displayDays = `${singular(days, "day")}`
-		let displayHours = `${singular(hours, "hour")}`
-		let displayMinu = `${singular(minutes, "minute")}`
-		let displaySecs = `${singular(seconds, "second")}`
+		let displayDays = singular(days, "day");
+		let displayHours = singular(hours, "hour");
+		let displayMinu = singular(minutes, "minute");
+		let displaySecs = singular(seconds, "second");
 
-	
-		  document.getElementById('singularD').innerHTML = displayDays
-		  document.getElementById('singularH').innerHTML = displayHours
-		  document.getElementById('singularM').innerHTML = displayMinu
-		  document.getElementById('singularS').innerHTML = displaySecs
-	
-	
-		  document.getElementById('days').innerHTML = days
-		  document.getElementById('hours').innerHTML = hours
-		  document.getElementById('minutes').innerHTML = minutes
-		  document.getElementById('seconds').innerHTML = seconds
+		document.getElementById('singularD').innerHTML = displayDays;
+		document.getElementById('singularH').innerHTML = displayHours;
+		document.getElementById('singularM').innerHTML = displayMinu;
+		document.getElementById('singularS').innerHTML = displaySecs;
+
+		document.getElementById('days').innerHTML = days;
+		document.getElementById('hours').innerHTML = hours;
+		document.getElementById('minutes').innerHTML = minutes;
+		document.getElementById('seconds').innerHTML = seconds;
+
 }
 
 // Chamada inicial
-initCountdown()
+initCountdown();
