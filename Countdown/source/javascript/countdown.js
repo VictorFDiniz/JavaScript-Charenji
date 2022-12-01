@@ -5,6 +5,16 @@ let timeInterval;
 let countdownWasStarted = false;
 let deadline = new Date(year, 9, 31);
 
+const singD = document.getElementById('singularD');
+const singH = document.getElementById('singularH');
+const singM = document.getElementById('singularM');
+const singS = document.getElementById('singularS');
+
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minsEl = document.getElementById('minutes');
+const secsEl = document.getElementById('seconds');
+
 // Função que inicia o contador
 function initCountdown() {
 
@@ -75,16 +85,15 @@ function updateTime() {
 		let displayMinu = singular(minutes, "minute");
 		let displaySecs = singular(seconds, "second");
 
-		document.getElementById('singularD').innerHTML = displayDays;
-		document.getElementById('singularH').innerHTML = displayHours;
-		document.getElementById('singularM').innerHTML = displayMinu;
-		document.getElementById('singularS').innerHTML = displaySecs;
+		daysEl.innerHTML = days;
+		hoursEl.innerHTML = hours;
+		minsEl.innerHTML = minutes;
+		secsEl.innerHTML = seconds;
 
-		document.getElementById('days').innerHTML = days;
-		document.getElementById('hours').innerHTML = hours;
-		document.getElementById('minutes').innerHTML = minutes;
-		document.getElementById('seconds').innerHTML = seconds;
-
+		singD.innerHTML = displayDays;
+		singH.innerHTML = displayHours;
+		singM.innerHTML = displayMinu;
+		singS.innerHTML = displaySecs;
 }
 
 // Chamada inicial
