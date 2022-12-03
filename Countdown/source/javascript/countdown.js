@@ -85,15 +85,15 @@ function updateTime() {
 		let displayMinu = singular(minutes, "minute");
 		let displaySecs = singular(seconds, "second");
 
-		daysEl.innerHTML = days;
-		hoursEl.innerHTML = hours;
-		minsEl.innerHTML = minutes;
-		secsEl.innerHTML = seconds;
+		daysEl.textContent = days;
+		hoursEl.textContent = hours;
+		minsEl.textContent = minutes;
+		secsEl.textContent = seconds;
 
-		singD.innerHTML = displayDays;
-		singH.innerHTML = displayHours;
-		singM.innerHTML = displayMinu;
-		singS.innerHTML = displaySecs;
+		singD.textContent = displayDays;
+		singH.textContent = displayHours;
+		singM.textContent = displayMinu;
+		singS.textContent = displaySecs;
 }
 
 // Chamada inicial
