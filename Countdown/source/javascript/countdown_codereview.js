@@ -42,8 +42,6 @@ function singular(value, singular, plural) {
 //      because I used requestAnimationFrame, this is important.
 //      see RoToRa's answer
 
-// I renamed singularD,... to labelDays,...:
-//      It expresses better its purpose.
 let labelDays = document.getElementById('singularD')
 let labelHours = document.getElementById('singularH')
 let labelMinutes = document.getElementById('singularM')
