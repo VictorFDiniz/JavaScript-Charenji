@@ -1,3 +1,7 @@
+// better version from codereview:
+// https://codereview.stackexchange.com/questions/281504/simple-countdown-to-halloween-project/281753?noredirect=1#comment559279_281753
+
+
 let HalloweenDate = { month: 9 /*October*/, day: 31 }
 function getMillisecondsToHalloween() {
     let now = new Date()
