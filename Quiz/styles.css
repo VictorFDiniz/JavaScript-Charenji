@@ -1,0 +1,157 @@
+/* X-Small devices (portrait phones, less than 576px) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  font-family: 'Ubuntu', sans-serif;
+  background-position: center center;
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+/* Sets the containers height and width */
+.base-timer {
+  position: relative;
+  margin-bottom: 5rem;
+  height: 270px;
+  width: 270px;
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: 0.8px;
+  stroke: #f6f6f8;
+}
+
+.base-timer__label {
+  color: #f6f6f8;
+  position: absolute;
+  /* Size should match the parent container */
+  width: 270px;
+  height: 270px;
+  /* Keep the label aligned to the top */
+  top: 0;
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Sort of an arbitrary number; adjust to your liking */
+  font-size: 48px;
+}
+
+.base-timer__path-remaining {
+  /* Just as thick as the original ring */
+  stroke-width: 9px;
+  stroke: #ff04f7;
+  /* Rounds the line endings to create a seamless circle */
+  stroke-linecap: round;
+  /* Makes sure the animation starts at the top of the circle */
+  transform: rotate(90deg);
+  transform-origin: center;
+  /* One second aligns with the speed of the countdown timer */
+  transition: 1s linear all;
+  /* Allows the ring to change color when the color value updates */
+  /* stroke: currentColor; */
+}
+
+.base-timer__svg {
+  /* Flips the svg and makes the animation to move left-to-right */
+  transform: scaleX(-1);
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bg-box_a, .bg-box_b, .bg-box_c, .bg-box_d {
+  display: flex;
+  width: 11.8rem;
+  height: 11.8rem;
+  align-items: center;
+  border-radius: 1.3rem;
+  justify-content: center;
+  background-color: #f6f6f8;
+  margin: 0rem 4rem 1rem 4rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.bg-box_a span, .bg-box_b span, .bg-box_c span, .bg-box_d span {
+  font-size: 1.3rem;
+  color: #f6f6f8;
+  display: flex;
+  margin-top: 2rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  border-radius: 3rem;
+}
+
+.bg-box_a p, .bg-box_b p, .bg-box_c p, .bg-box_d p {
+  font-size: 1.3rem;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+}
+
+.bg-box_a span {
+  background-color: orangered;
+}
+
+.bg-box_b span {
+  background-color: mediumseagreen;
+}
+
+.bg-box_c span {
+  background-color: mediumpurple;
+}
+
+.bg-box_d span {
+  background-color: yellowgreen;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  /* Add styles for small devices */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* Add styles for medium devices */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Add styles for large devices */
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  /* Add styles for x-large devices */
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* Add styles for xx-large devices */
+}
