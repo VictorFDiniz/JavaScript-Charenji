@@ -61,7 +61,7 @@ body {
 }
 
 .bg-box_a p, .bg-box_b p, .bg-box_c p, .bg-box_d p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   align-self: flex-end;
   margin-bottom: 2rem;
 }

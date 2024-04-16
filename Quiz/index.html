@@ -7,33 +7,34 @@
   <link rel="stylesheet" href="CSS/styles.css">
   <link rel="stylesheet" href="CSS/timer.css">
   <script src="scripts/timer.js" defer></script>
+  <script src="scripts/quizData.js" defer></script>
 </head>
 <body>
 
   <div id="app"></div>
 
-   <p class="quest">Qual animal é o mais rapido do mundo?</p>
+   <p id="question_text" class="quest">texto da questão</p>
 
   <div class="container">
 
-    <div class="bg-box_a">
+    <div class="bg-box_a clickable">
       <span>A</span>
-      <p>Tartaruga</p>
+      <p id="a_text">Tartaruga</p>
     </div>
 
-    <div class="bg-box_b">
+    <div class="bg-box_b clickable">
       <span>B</span>
-      <p>Leão</p>
+      <p id="b_text">Leão</p>
     </div>
 
-    <div class="bg-box_c">
+    <div class="bg-box_c clickable">
       <span>C</span>
-      <p>Guepardo</p>
+      <p id="c_text">Guepardo</p>
     </div>
 
-    <div class="bg-box_d">
+    <div class="bg-box_d clickable">
       <span>D</span>
-      <p>Barata</p>
+      <p id="d_text">Barata</p>
     </div>
 
   </div>
