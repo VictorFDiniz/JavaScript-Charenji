@@ -1,5 +1,5 @@
 // Start with an initial value of 20 seconds
-const TIME_LIMIT = 20;
+const TIME_LIMIT = 120;
 
 // Initially, no time has passed, but this will count up
 // and subtract from the TIME_LIMIT
