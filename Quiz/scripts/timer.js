@@ -49,6 +49,7 @@ document.getElementById("app").innerHTML = `
 `
 function onTimesUp() {
   clearInterval(timerInterval)
+  quiz.innerHTML = "<h2>Tempo esgotado :(</h2>"
 }
 
 function startTimer() {
