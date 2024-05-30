@@ -16,6 +16,7 @@ body {
     background-repeat: no-repeat;
     font-family: 'Ubuntu', sans-serif;
     background-position: center center;
+    transition: background 0.5s linear;
     background-image: url(../images/ween04.avif);
 }
 

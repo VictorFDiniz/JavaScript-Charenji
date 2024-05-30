@@ -1,0 +1,17 @@
+.bg {
+    height: 100vh;
+    background-color: gainsboro;
+}
+
+h1 {
+    padding-top: 1rem;
+}
+
+.box {
+    width: 16rem;
+    height: 14rem;
+    border-radius: 1rem;
+    margin: 4rem 4rem 0 0;
+    background-color: white;
+    cursor: pointer;
+}
