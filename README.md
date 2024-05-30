@@ -4,6 +4,8 @@
 
 This repository hosts some projects developed in vanilla JavaScript with the goal of improving my skills:
 
+https://victorfdiniz.github.io/JavaScript-Charenji/
+
 - **Technologies Used:**
   - JavaScript
   - HTML/CSS
@@ -29,6 +31,8 @@ ________________________________________________________________________________
 # JavaScript-Charenji
 
 Este repositório hospeda alguns projetos desenvolvidos em vanilla JavaScript com o objetivo de aprimorar minhas habilidades:
+
+https://victorfdiniz.github.io/JavaScript-Charenji/
 
 - **Tecnologias Utilizadas:**
   - JavaScript
