@@ -41,13 +41,13 @@ h2 {
 
 .bg-box_a, .bg-box_b, .bg-box_c, .bg-box_d {
   display: flex;
-  width: 8.8rem;
-  height: 8.8rem;
+  width: 8.4rem;
+  height: 8.4rem;
   align-items: center;
   border-radius: 1.3rem;
   justify-content: center;
   background-color: #f6f6f8;
-  margin: 1rem 0.8rem 1.5rem 1.8rem;
+  margin: 1rem 0.6rem 1.5rem 1.8rem;
   transition: box-shadow 0.3s, transform 0.3s;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0,0,0,0.1);
 }
